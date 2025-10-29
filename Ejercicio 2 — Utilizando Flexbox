@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ejercicio 2 - Flexbox - 00074624</title>
+  <link rel="stylesheet" href="index_flex.css">
+</head>
+<body>
+  <header><h1>Ejercicio 2: Flexbox</h1><p>Carné: <strong>00074624</strong></p></header>
+
+  <section class="flex-container">
+    <div class="box a">Caja A</div>
+    <div class="box b">Caja B</div>
+    <div class="box c">Caja C</div>
+    <div class="box d">Caja D</div>
+  </section>
+
+  <footer>Laboratorio II - Flexbox</footer>
+</body>
+</html>
+
+
+/* index_flex.css */
+body{ font-family: Arial, Helvetica, sans-serif; margin:16px; background:#f7fafc; }
+header h1{ margin:0; }
+.flex-container{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center; /* eje cruzado */
+  justify-content:space-between; /* eje principal */
+  margin-top:12px;
+  padding: 12px;
+  background:white;
+  border-radius:8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+.box{
+  flex: 1 1 150px; /* crecer, encoger, base */
+  min-width:120px;
+  padding:16px;
+  border-radius:6px;
+  text-align:center;
+  font-weight:600;
+}
+.a{ background:#ffd166; }
+.b{ background:#06d6a0; }
+.c{ background:#118ab2; color:white; }
+.d{ background:#ef476f; color:white; }
+
+/* ejemplo: caja B se hace más grande */
+.b{ flex:2 1 200px; }

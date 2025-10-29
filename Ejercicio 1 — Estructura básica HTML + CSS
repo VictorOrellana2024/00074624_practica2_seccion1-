@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Estructura básica - 00074624</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Guía: Estructura básica</h1>
+    <p class="carnet">Carné: <strong>00074624</strong></p>
+  </header>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Ejemplo</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <section>
+      <h2>Contenido principal</h2>
+      <p>Este es un ejemplo de estructura HTML básica con su correspondiente archivo CSS externo.</p>
+    </section>
+
+    <aside class="sidebar">
+      <h3>Barra lateral</h3>
+      <p>Información complementaria.</p>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p>Laboratorio II - Programación Web | Carné 00074624</p>
+  </footer>
+</body>
+</html>
+
+
+/* index.css — Estructura básica */
+:root{
+  --primary: #2b6cb0;
+  --muted: #666;
+  --bg: #f7fafc;
+}
+
+* { box-sizing: border-box; }
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: #222;
+  line-height:1.4;
+  padding: 16px;
+}
+
+.site-header{
+  background: var(--primary);
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+}
+.site-header h1{ margin: 0 0 4px 0; }
+.carnet { margin:0; font-size: 0.95rem; opacity: 0.95; }
+
+.main-nav ul{
+  display:flex;
+  gap:12px;
+  list-style:none;
+  padding: 8px 0;
+  margin: 12px 0;
+}
+.main-nav a{ text-decoration:none; color:var(--primary); }
+
+.content{
+  display:block;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+
+.content > section { margin-bottom: 16px; }
+.sidebar { background:#f1f5f9; padding:8px; border-radius:6px; }
+
+/* Footer */
+.site-footer{ text-align:center; margin-top: 12px; font-size:0.9rem; color:var(--muted); }

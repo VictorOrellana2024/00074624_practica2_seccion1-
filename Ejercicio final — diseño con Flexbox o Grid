@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ejercicio Final - 00074624</title>
+  <link rel="stylesheet" href="final.css">
+</head>
+<body>
+  <div class="site">
+    <header class="site-header">
+      <h1>Proyecto Final - Laboratorio II</h1>
+      <p>Carné: <strong>00074624</strong> — Sección 1</p>
+    </header>
+
+    <nav class="site-nav">
+      <a href="#">Inicio</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Contacto</a>
+    </nav>
+
+    <main class="site-main">
+      <article class="hero">
+        <h2>Bienvenido al diseño final</h2>
+        <p>Esta plantilla combina Grid y Flexbox para lograr un layout moderno y adaptable.</p>
+      </article>
+
+      <section class="cards">
+        <div class="card">
+          <h3>Servicios</h3>
+          <p>Descripción corta de servicios ofrecidos.</p>
+        </div>
+        <div class="card">
+          <h3>Proyecto</h3>
+          <p>Breve párrafo del proyecto.</p>
+        </div>
+        <div class="card">
+          <h3>Contacto</h3>
+          <p>Teléfono / Correo</p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="site-aside">
+      <h4>Noticias</h4>
+      <ul>
+        <li>Nota 1</li>
+        <li>Nota 2</li>
+        <li>Nota 3</li>
+      </ul>
+    </aside>
+
+    <footer class="site-footer">
+      <p>Laboratorio II - Programación Web — Carné 00074624</p>
+    </footer>
+  </div>
+</body>
+</html>
+
+
+/* final.css */
+:root{
+  --accent:#2563eb;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --bg:#f3f4f6;
+}
+*{ box-sizing:border-box; }
+body{ margin:0; font-family:Inter, Arial, Helvetica, sans-serif; background:var(--bg); color:#111; padding:20px; }
+
+.site{ max-width:1200px; margin:0 auto; display:grid; gap:16px; grid-template-columns: 1fr 320px; grid-template-rows: auto 1fr auto; grid-template-areas:
+  "header header"
+  "main aside"
+  "footer footer";
+}
+
+.site-header{ grid-area: header; background:var(--accent); color:white; padding:20px; border-radius:8px; }
+.site-nav{ display:flex; gap:12px; padding:8px 0 0 0; }
+.site-nav a{ color:white; text-decoration:none; opacity:.95; }
+
+.site-main{ grid-area: main; background:var(--card); padding:18px; border-radius:8px; box-shadow:0 1px 6px rgba(0,0,0,.06); }
+.site-aside{ grid-area: aside; background:var(--card); padding:18px; border-radius:8px; height:fit-content; }
+.site-footer{ grid-area: footer; text-align:center; color:var(--muted); padding:12px; }
+
+.hero{ margin-bottom:12px; }
+.cards{ display:grid; grid-template-columns: repeat(3,1fr); gap:12px; }
+.card{ padding:12px; border-radius:8px; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.04); }
+
+/* responsive */
+@media (max-width:900px){
+  .site{ grid-template-columns: 1fr; grid-template-areas:
+    "header"
+    "main"
+    "aside"
+    "footer";
+  }
+  .cards{ grid-template-columns: 1fr; }
+}
